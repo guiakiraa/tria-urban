@@ -15,16 +15,18 @@ public class SwaggerConfiguration {
     public OpenAPI configurarSwagger() {
         return new OpenAPI()
                 .info(new Info()
-                        .title("Projeto de Gestão de Motos da empresa Mottu")
+                        .title("Tria Urban - Global Solution 2025 - 1 Semestre - FIAP")
                         .description("Este projeto oferece uma implementação que possibilita "
-                                + "a gestão de motos dentro dos pátios da empresa Mottu")
-                        .summary("A fim de resolver o problema de perda de motos dentro dos pátios da Mottu, "
-                                + "desenvolvemos esse projeto com o intuíto de não deixar as motos ficarem em setores "
-                                + "em que elas não deveriam estar")
+                                + "a ajuda de pessoas que sofreram algum tipo de dano "
+                                + "com desastres naturais.")
+                        .summary("A fim de dimunuir os danos causados pelos desastres naturais, já que impedir é "
+                                + "impossível(desastre NATURAL), desenvolvemos esse projeto com o intuíto de "
+                                + "ajudar pessoas que sofreram com isso, possibilitando elas encontrarem "
+                                + "pontos de distruição/abrigo com o suporte necessário.")
                         .version("v1.0.0")
                         .license(new License()
                                 .url("www.fiap.com.br")
-                                .name("Licença - Projeto de Gestão de Motos - v1.0.0"))
+                                .name("Licença - Tria Urban - v1.0.0"))
                         .termsOfService("Termos de Serviço"))
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components().addSecuritySchemes("bearerAuth",
