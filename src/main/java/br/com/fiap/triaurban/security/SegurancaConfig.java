@@ -28,7 +28,7 @@ public class SegurancaConfig {
         http.csrf(csrf -> csrf.disable())
                 .headers(banco -> banco.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable))
                 .authorizeHttpRequests(request ->
-                        request.requestMatchers("/autenticacao/**", "/publico/**").permitAll() // rotas públicas
+                        request.requestMatchers("/autenticacao/**", "/publico/**", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll() // rotas públicas
                                 .anyRequest().authenticated())
                 //.httpBasic(Customizer.withDefaults());
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

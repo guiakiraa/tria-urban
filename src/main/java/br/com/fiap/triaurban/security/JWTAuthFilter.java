@@ -38,7 +38,7 @@ public class JWTAuthFilter extends OncePerRequestFilter {
         String path = request.getRequestURI();
 
         // Ignora rotas públicas
-        if (path.startsWith("/autenticacao") || path.startsWith("/publico")) {
+        if (path.startsWith("/autenticacao") || path.startsWith("/publico") || path.startsWith("/swagger-ui")  || path.startsWith("/v3/api-docs")) {
             filterChain.doFilter(request, response);
             return;
         }
