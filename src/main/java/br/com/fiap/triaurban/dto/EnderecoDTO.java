@@ -5,7 +5,6 @@ import lombok.Builder;
 
 @Builder
 public record EnderecoDTO(
-        Long id,
         String logradouro,
         String numero,
         String bairro,

@@ -5,7 +5,6 @@ import lombok.Builder;
 
 @Builder
 public record PontoDistribuicaoDTO(
-        Long id,
         TipoPontoEnum tipo,
         String nome,
         UsuarioDTO usuario,
