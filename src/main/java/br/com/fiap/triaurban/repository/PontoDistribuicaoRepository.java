@@ -12,11 +12,17 @@ import java.util.List;
 @Repository
 public interface PontoDistribuicaoRepository extends JpaRepository<PontoDistribuicao, Long> {
     @Query(value = """
-    SELECT pd.nome AS nome_ponto, SUM(ei.quantidade) AS total_itens
+    SELECT 
+        pd.nome AS nome_ponto, 
+        e.logradouro || ', ' || e.numero || ' - ' || e.bairro || ', ' || e.cidade || ' - ' || e.uf || ', ' || e.cep AS endereco_ponto,
+        SUM(ei.quantidade) AS total_itens
     FROM ponto_distribuicao pd
     JOIN estoque_item ei ON ei.ponto_distribuicao_id = pd.id
-    GROUP BY pd.nome
+    JOIN endereco e ON pd.endereco_id = e.id
+    GROUP BY pd.nome, e.logradouro, e.numero, e.bairro, e.cidade, e.uf, e.cep
     ORDER BY total_itens DESC
     """, nativeQuery = true)
     List<PontoComTotalProjection> encontrarPontosComMaisItens();
+
+
 }

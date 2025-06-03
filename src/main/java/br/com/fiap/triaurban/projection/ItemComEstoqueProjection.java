@@ -4,5 +4,6 @@ public interface ItemComEstoqueProjection {
     String getNomeItem();
     Integer getQuantidade();
     String getNomePonto();
+    String getEnderecoPonto();
 }
 

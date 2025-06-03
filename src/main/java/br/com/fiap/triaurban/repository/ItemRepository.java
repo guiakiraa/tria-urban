@@ -22,12 +22,19 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     List<ItemPontoProjection> buscarItensPorPonto(@Param("idPonto") Long idPonto);
 
     @Query(value = """
-    SELECT i.nome AS nome_item, ei.quantidade, pd.nome AS nome_ponto
+    SELECT 
+        i.nome AS nome_item, 
+        ei.quantidade, 
+        pd.nome AS nome_ponto,
+        e.logradouro || ', ' || e.numero || ' - ' || e.bairro || ', ' || e.cidade || ' - ' || e.uf || ', ' || e.cep AS endereco_ponto
     FROM item i
     JOIN estoque_item ei ON ei.item_id = i.id
     JOIN ponto_distribuicao pd ON ei.ponto_distribuicao_id = pd.id
+    JOIN endereco e ON pd.endereco_id = e.id
     WHERE i.categoria = :categoria
     """, nativeQuery = true)
     List<ItemComEstoqueProjection> buscarItensPorCategoria(@Param("categoria") String categoria);
+
+
 
 }
