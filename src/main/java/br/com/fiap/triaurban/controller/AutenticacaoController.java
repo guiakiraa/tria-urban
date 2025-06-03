@@ -1,6 +1,7 @@
 package br.com.fiap.triaurban.controller;
 
 import br.com.fiap.triaurban.security.JWTUtil;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,6 +20,10 @@ public class AutenticacaoController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Operation(
+            tags = "Autenticação",
+            summary = "Este endpoint faz sua autenticação na API gerando um Token JWT, possibilitando a utilização dos outros endpoints"
+    )
     @PostMapping("/login")
     public String gerarTokenValido(@RequestParam String username, @RequestParam String password) {
         try {
