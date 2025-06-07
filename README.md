@@ -40,8 +40,8 @@ Usuários que precisam de ajuda podem localizar os pontos de distribuição mais
 ### Clonando o repositório
 
 ```bash
-git clone https://github.com/guiakiraa/java-mottu.git
-cd java-mottu
+git clone https://github.com/guiakiraa/tria-urban.git
+cd tria-urban
 ```
 
 ### Executando o projeto
