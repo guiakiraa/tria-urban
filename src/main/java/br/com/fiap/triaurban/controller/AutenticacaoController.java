@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/autenticacao")
 public class AutenticacaoController {
@@ -25,18 +28,18 @@ public class AutenticacaoController {
             summary = "Este endpoint faz sua autenticação na API gerando um Token JWT, possibilitando a utilização dos outros endpoints"
     )
     @PostMapping("/login")
-    public String gerarTokenValido(@RequestParam String username, @RequestParam String password) {
+    public Map<String, String> gerarTokenValido(@RequestParam String username, @RequestParam String password) {
+        Map<String, String> response = new HashMap<>();
         try {
-
             var auth = new UsernamePasswordAuthenticationToken(username, password);
             authenticationManager.authenticate(auth);
-            return jwtUtil.construirToken(username);
-
-
+            String token = jwtUtil.construirToken(username);
+            response.put("token", token);
+            return response;
         } catch (Exception e) {
-            return "Usuário ou senha inválidos";
+            response.put("error", "Usuário ou senha inválidos");
+            return response;
         }
-
     }
 
 }
