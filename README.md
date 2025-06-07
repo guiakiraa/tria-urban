@@ -88,3 +88,21 @@ Authorization: Bearer <seu_token_aqui>
 ```
 
 Substitua `<seu_token_aqui>` pelo token retornado na etapa de login.
+
+## Devops Tools & Cloud Computing
+
+Este repositório contém os seguintes arquivos importantes:
+
+---
+
+### 📄 `Dockerfile`
+
+Arquivo utilizado para a criação da imagem Docker da aplicação. Ele define o ambiente necessário para a aplicação ser executada corretamente.
+
+---
+
+### 📄 `script.md`
+
+Arquivo contendo os **corpos de requisição (body)** utilizados nos testes da API. Esse documento serve como referência para facilitar o reuso das requisições durante o desenvolvimento e testes.
+
+---
