@@ -10,9 +10,9 @@
 
 ## Link dos Vídeos
 
-Pitch: https://youtu.be/H7F3I7Zxw-w?si=jwK8nPOAQlF8tWlr
-Java: https://youtu.be/aLybToP_iDE?si=ptQTZColXNBUF48X
-Cloud: https://youtu.be/-KKD-TsUsrg?si=46RTSXmNyFpr41jR
+- Pitch: https://youtu.be/H7F3I7Zxw-w?si=jwK8nPOAQlF8tWlr
+- Java: https://youtu.be/aLybToP_iDE?si=ptQTZColXNBUF48X
+- Cloud: https://youtu.be/-KKD-TsUsrg?si=46RTSXmNyFpr41jR
 
 ## Resumo da Solução — TRIA URBAN
 
